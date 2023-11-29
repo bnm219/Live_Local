@@ -8,7 +8,7 @@ This template provides a fully functional CRUD app. Once a user has successfully
 2. Clone down your repo and run `npm install`.
 3. Create a `.env` file according to the provided `example.env`.
 4. Apply the initial Prisma migration and generate the client.\
-   `npx prisma migrate reset`
+   `npx prisma migrate reset` or `npx prisma generate` then `npx prisma db push`
 5. Start developing!\
    `npm run dev`
 

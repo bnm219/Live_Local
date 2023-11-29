@@ -11,16 +11,10 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  username String @unique
-  password String
-  tasks    Task[]
-}
-
-model Task {
-  id          Int     @id @default(autoincrement())
-  description String
-  done        Boolean @default(false)
-  userId      Int
-  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id Int  @id @default(autoincrement())
+  userName   String 
+  email  String?
+  imageUrl String?
+  city String?
+  password String?
 }
