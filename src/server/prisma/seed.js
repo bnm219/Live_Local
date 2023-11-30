@@ -6,6 +6,7 @@ const seed = async () => {
     await prisma.user.create({
       data: {
         userName: faker.internet.userName(),
+        isBand: faker.datatype.boolean(),
         email: faker.internet.email(),
         imageUrl: "https://images.app.goo.gl/x7njWd9AhDxEF3Vy8",
         city: faker.location.city(),

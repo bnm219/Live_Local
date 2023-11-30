@@ -4,14 +4,16 @@ const prisma = require("../prisma");
 const router = require("express").Router();
 module.exports = router;
 
-router.get("/", async (req, res, next) => {
-    try {
-      const user = await prisma.user.findMany();
-      res.json(user);
-    } catch (err) {
-      next(err);
-    }
-  });
+//function homeEndPoint(req, res){
+    router.get("/", async (req, res, next) => {
+        try {
+        const user = await prisma.user.findMany();
+        res.json(user);
+        } catch (err) {
+        next(err);
+        }
+    });
+//}
 
   router.get('/:userName', async (req, res, next) => {
     console.log(req.body) 
@@ -32,4 +34,4 @@ router.get("/", async (req, res, next) => {
     }    
   });
 
-  export default router;
+  //export default router;
