@@ -3,7 +3,7 @@ import eventsReducer from "./eventsSlice"
 
 const store = configureStore({
     reducer: {
-        students: studentReducer
+        events: eventsReducer
     }
 })
 
