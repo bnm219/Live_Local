@@ -12,10 +12,11 @@ datasource db {
 
 model User {
   id Int  @id @default(autoincrement())
-  userName   String 
+  userName   String @unique
+  password String
   isBand Boolean
   email  String?
   imageUrl String?
   city String?
-  password String?
+
 }
