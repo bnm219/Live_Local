@@ -5,7 +5,7 @@ const seed = async () => {
   for (let i = 1; i <= 20; i++) {
     await prisma.user.create({
       data: {
-        userName: faker.internet.userName(),
+        username: faker.internet.userName(),
         isBand: faker.datatype.boolean(),
         email: faker.internet.email(),
         imageUrl: "https://images.app.goo.gl/x7njWd9AhDxEF3Vy8",
