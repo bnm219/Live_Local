@@ -9,7 +9,7 @@ function MainSection() {
         <h2>Find Events In Your City</h2>
       </section>
       <section>
-      <div class="grid-container">
+      <div className="grid-container">
   <div>City</div>
   <div>City</div>
   <div>City</div>  

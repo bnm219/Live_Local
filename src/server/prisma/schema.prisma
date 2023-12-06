@@ -14,9 +14,24 @@ model User {
   id Int  @id @default(autoincrement())
   username   String @unique
   password String
-  isBand Boolean
   email  String?
   imageUrl String?
   city String?
+  events Usersevents[]
+}
 
+model Event {
+  id          Int     @id @default(autoincrement())
+  name String
+  city String
+  description String?
+  users Usersevents[]
+}
+
+model Usersevents {
+  user User @relation(fields: [userId], references: [id])
+  userId Int 
+  event Event @relation(fields: [eventId], references: [id])
+  eventId Int
+  @@id([userId, eventId])
 }
