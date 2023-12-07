@@ -9,6 +9,7 @@ import store from "./store";
 import AuthForm from "./features/auth/AuthForm";
 import App from "./layout/App.jsx"
 import Root from "./layout/Root.jsx";
+import NotFound from "./layout/notfound.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <App /> },
       { path: "/login", element: <AuthForm /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);

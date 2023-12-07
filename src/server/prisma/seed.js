@@ -31,11 +31,8 @@ const seed = async () => {
   });
 
 
-  const cities = await prisma.event.groupBy({ // use this in an express endpoint, after, use the response from the get to see in front end
-    by: ['city']
-  });
-  console.log("CITIES:   "+ JSON.stringify(cities[0].city));
-};
+
+ };
 
 
 
@@ -46,3 +43,4 @@ seed()
     await prisma.$disconnect();
     process.exit(1);
   });
+

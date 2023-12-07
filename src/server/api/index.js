@@ -27,4 +27,4 @@ router.use(async (req, res, next) => {
 });
 
 router.use("/auth", require("./auth"));
-//router.use("/users", require("./users"));
+router.use("/cities", require("./cities"));
