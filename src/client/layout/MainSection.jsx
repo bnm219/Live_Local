@@ -5,8 +5,6 @@ import { useGetCitiesQuery } from '../store/citiesSlice'
 function MainSection() {
   const {data, isError, isLoading} = useGetCitiesQuery();
 
-  console.log(data)
-
     // handle the case where the data is still loading
     if (isLoading){
       return (<p>Loading . . .</p>)
@@ -22,19 +20,13 @@ function MainSection() {
       <section>
         <img src={landingpageimg2} alt="Women sitting and talking on a bench in a field full of flowers"></img>
         <h2>Find Events In Your City</h2>
-        {console.log(data)}
       </section>
       <section>
       <div className="grid-container">
-  <div>City</div>
-  <div>City</div>
-  <div>City</div>  
-  <div>City</div>
-  <div>City</div>
-  <div>City</div>
-  <div>City</div>
-  <div>City</div>
-</div>
+        {data.map((i) => (
+          <div>{i.city}</div>
+          ))}
+      </div>
       </section>
     </main>
   );
