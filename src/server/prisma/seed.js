@@ -3,6 +3,7 @@ const { faker } = require('@faker-js/faker');
 
 const seed = async () => {
   for (let i = 1; i <= 20; i++) {
+    //Creates Users
     await prisma.user.create({
       data: {
         username: faker.internet.userName(),
@@ -13,7 +14,7 @@ const seed = async () => {
       }
     });
   };
-  //start here to create events
+  //Creates Events
   for (let i = 1; i <= 20; i++) {
     await prisma.event.create({
       data: {
@@ -23,6 +24,7 @@ const seed = async () => {
       }
     });
   }
+  //This is the table where users add events to thier profile page
   await prisma.usersevents.create({
     data: {
       userId: 1,

@@ -1,6 +1,6 @@
 
 import React from 'react'
-//import { useGetEventsQuery } from './eventsSlice'
+import { useGetCityQuery } from '../store/evenentsPerCitiesSlice'
 import { useParams, Link } from 'react-router-dom';
 
 export const listOfEvents = ({}) => {
@@ -17,6 +17,8 @@ export const listOfEvents = ({}) => {
     // }
 
     return (
-        <div></div>
+        <div>
+            {/* TODO */}
+        </div>
     )
 }
