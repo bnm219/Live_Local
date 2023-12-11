@@ -2,12 +2,12 @@
 import React from 'react'
 import { useGetCityQuery } from '../store/evenentsPerCitiesSlice'
 import { useParams, Link } from 'react-router-dom';
+import citySkyline from '../../img/citySkyline.png';
+import Events from './Events'
 
 export default function listOfEvents() {
     let { city } = useParams();
-    console.log(city);
     const {data, isError, isLoading} = useGetCityQuery(city);
-    console.log(data);
 
     // handle the case where the data is still loading
     if (isLoading){
@@ -21,9 +21,13 @@ export default function listOfEvents() {
 
     return (
         <div>
-            {data?.map((i) => (
-                <div>Name: {i.name} Description: {i.description}</div>
-          ))}
+          <section>
+            <img src={citySkyline} alt="City Skyline"></img>
+            <h2>Events in {city}</h2>
+          </section>
+            {data?.map((e,i) => <Events cityName= {e.city} eventsName={e.name} eventsDescription={e.description} key={`${e}-${i}`} />)}
+                {/* // <div>Name: {i.name} Description: {i.description}</div> */}
+                
         </div>
     )
 }
