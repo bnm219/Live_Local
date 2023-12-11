@@ -9,6 +9,7 @@ const store = configureStore({
     [api.reducerPath]: api.reducer,
     auth: authReducer,
     cities: citiesApi.reducer,
+    city : cityApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(api.middleware).concat(citiesApi.middleware).concat(cityApi.middleware),

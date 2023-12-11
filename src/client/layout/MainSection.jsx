@@ -1,6 +1,7 @@
 import React from 'react';
 import landingpageimg2 from '../../img/landingpageimg2.png';
-import { useGetCitiesQuery } from '../store/citiesSlice'
+import { useGetCitiesQuery } from '../store/citiesSlice';
+import { Link } from "react-router-dom";
 
 function MainSection() {
   const {data, isError, isLoading} = useGetCitiesQuery();
@@ -24,7 +25,7 @@ function MainSection() {
       <section>
       <div className="grid-container">
         {data.map((i) => (
-          <div>{i.city}</div>
+          <div><Link to = {`/city/${i.city}`}>{i.city}</Link></div>
           ))}
       </div>
       </section>

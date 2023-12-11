@@ -7,10 +7,10 @@ module.exports = router;
 //Finds events by city
 router.get("/:city", async (req, res, next) => {
     try {
-      const city = +req.params;
+      const { city } = req.params;
+      console.log("CITY:::: "+ city);
   
-      const event = await prisma.event.findUnique({ where: { city } });
-  
+      const event = await prisma.event.findMany({ where: { city: city } });
       res.json(event);
     } catch (err) {
       next(err);

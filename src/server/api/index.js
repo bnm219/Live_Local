@@ -28,3 +28,4 @@ router.use(async (req, res, next) => {
 
 router.use("/auth", require("./auth"));
 router.use("/cities", require("./cities"));
+router.use("/events", require("./eventsPerCities"));

@@ -1,0 +1,26 @@
+import './App.css'
+//import { useToggleTaskMutation, useDeleteTaskMutation } from '../store/taskSlice'
+
+function Task({task}) {
+  // use the hooks to create the mutation functions we'll use
+//   const [toggleTask] = useToggleTaskMutation()
+//   const [deleteTask] = useDeleteTaskMutation()
+
+  // click handler for toggling task 'done' status
+//   const toggle = async() => {
+//     await toggleTask(task.id)
+//   }
+
+  // click handler for deleting a task from the list
+//   const deleteHandler = () => {
+//     deleteTask(task.id)
+//   }
+
+  return (
+    <div>
+    
+    </div>
+  )
+}
+
+export default Event

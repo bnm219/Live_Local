@@ -7,8 +7,8 @@ export const cityApi = createApi({
       baseUrl: 'http://localhost:3000/api'
     }),
     endpoints: (builder) => ({
-        getCities: builder.query({
-        query: () => "/:city",
+        getCity: builder.query({
+        query: (city) => `/events/${city}`,
         providesTags: ["City"], 
         })
     })

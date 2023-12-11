@@ -62,3 +62,7 @@ h1 {
 h2 {
     color: #000;
   }
+
+  a, a:hover {
+    color: #fff;
+  }
