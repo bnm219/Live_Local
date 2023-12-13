@@ -8,11 +8,24 @@ export const cityApi = createApi({
     }),
     endpoints: (builder) => ({
         getCity: builder.query({
-        query: (city) => `/events/${city}`,
+        query: (city) => `/events/city/${city}`,
         providesTags: ["City"], 
         })
     })
+});
+
+export const rsvpApi = createApi({
+  reducerPath:'rsvp',
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'http://localhost:3000/api/city'
+  }),
+  endpoints: (builder) => ({
+    postRsvp: builder.query({
+    query: (city, userId, eventId) => `/${city}/rsvp/${userId}/${eventId}`,
+    })  
+  })
 })
 
 
 export const { useGetCityQuery } = cityApi;
+export const { usePostRsvpApi } = rsvpApi

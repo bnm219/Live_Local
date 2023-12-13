@@ -10,7 +10,8 @@ const seed = async () => {
         email: faker.internet.email(),
         imageUrl: "https://images.app.goo.gl/x7njWd9AhDxEF3Vy8",
         city: faker.location.city(),
-        password: 'password'
+        password: 'password',
+        events:  {create: []}
       }
     });
   };
@@ -20,21 +21,12 @@ const seed = async () => {
       data: {
         name: faker.company.buzzPhrase(),
         city: faker.location.city(),
-        description: faker.random.words({ min: 5, max: 10 })
+        description: faker.random.words({ min: 5, max: 10 }),
+        users: {create: []}
       }
     });
   }
-  //This is the table where users add events to thier profile page
-  await prisma.usersevents.create({
-    data: {
-      userId: 1,
-      eventId:1
-    }
-  });
-
-
-
- };
+};
 
 
 
