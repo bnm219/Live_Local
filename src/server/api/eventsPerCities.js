@@ -4,6 +4,14 @@ const prisma = require("../prisma");
 const router = require("express").Router();
 module.exports = router;
 
+router.use((req, res, next) => {
+  // if (!res.locals.user) {
+  //   return next(new ServerError(401, "You must be logged in."));
+  // }
+  console.log("RESPONSE: ", res.locals.user);
+  next();
+});
+
 //Finds events by city
 router.get("/city/:city", async (req, res, next) => { 
   try {
@@ -18,9 +26,9 @@ router.get("/city/:city", async (req, res, next) => {
 });
 
 //Creates a post connect the user to the events
-router.post("/rsvp/:userId/:eventId", async (req, res, next) => {
+router.post("/rsvp/:eventId", async (req, res, next) => {
   //const { userId, eventId } = req.params;
-  const userId =  +req.params.userId;
+  const userId =  res.locals.user.id;
   const eventId = +req.params.eventId;
 
   try{

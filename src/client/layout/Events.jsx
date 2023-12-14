@@ -3,17 +3,12 @@ import { useParams } from 'react-router-dom';
 import './App.css'
 import { useAddRsvpMutation } from '../store/eventsPerCitiesSlice'
 
-//    query: (city, userId, eventId) => `/${city}/rsvp/${userId}/${eventId}`,
-
-
-function Event({eventsName, eventsDescription}) {
-  let { userId, eventId } = useParams();
-
+function Event({eventId, eventsName, eventsDescription}) {
   // use the hooks to create the mutation functions we'll use
   const [addRsvp] = useAddRsvpMutation();  
 
   const rsvp = async() => {
-    await addRsvp(userId, eventId)  //can I pass in the variables that I need using useParams?
+    await addRsvp(eventId)
   }
 
   return (

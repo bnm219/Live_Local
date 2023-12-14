@@ -24,7 +24,7 @@ export default function listOfEvents() {
             <img src={citySkyline} alt="City Skyline"></img>
             <h2>Events in {city}</h2>
           </section>
-            {data?.map((e,i) => <Events eventsName={e.name} eventsDescription={e.description} key={`${e}-${i}`} />)}
+            {data?.map((e,i) => <Events eventId={e.id} eventsName={e.name} eventsDescription={e.description} key={`${e}-${i}`} />)}
                 {/* // <div>Name: {i.name} Description: {i.description}</div> */}
                       
         </div>
