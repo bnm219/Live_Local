@@ -1,7 +1,6 @@
-
 import React from 'react'
-import { useGetCityQuery } from '../store/evenentsPerCitiesSlice'
-import { useParams, Link } from 'react-router-dom';
+import { useGetCityQuery } from '../store/eventsPerCitiesSlice'
+import { useParams } from 'react-router-dom';
 import citySkyline from '../../img/citySkyline.png';
 import Events from './Events'
 
@@ -25,9 +24,9 @@ export default function listOfEvents() {
             <img src={citySkyline} alt="City Skyline"></img>
             <h2>Events in {city}</h2>
           </section>
-            {data?.map((e,i) => <Events cityName= {e.city} eventsName={e.name} eventsDescription={e.description} key={`${e}-${i}`} />)}
+            {data?.map((e,i) => <Events eventsName={e.name} eventsDescription={e.description} key={`${e}-${i}`} />)}
                 {/* // <div>Name: {i.name} Description: {i.description}</div> */}
-                
+                      
         </div>
     )
 }
