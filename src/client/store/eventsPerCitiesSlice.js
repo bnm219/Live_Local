@@ -13,27 +13,23 @@ export const cityApi = createApi({
     })
 });
 
-// export const rsvpApi = createApi({
-//   reducerPath:'rsvp',
-//   baseQuery: fetchBaseQuery({
-//     baseUrl: 'http://localhost:3000/api/city'
-//   }),
-//   endpoints: (builder) => ({
-//     postRsvp: builder.query({
-//     query: (city, userId, eventId) => `/${city}/rsvp/${userId}/${eventId}`,
-//     })  
-//   }),
+export const rsvpApi = createApi({
+  reducerPath:'rsvp',
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'http://localhost:3000/api/city'
+  }),
 
-endpoints: (builder) => ({
-
-  addRsvp: builder.mutation({
-    query: (city, userId, eventId) => ({
-      url: `/${city}/rsvp/${userId}/${eventId}`,
-      method: "POST",
+  endpoints: (builder) => ({
+    addRsvp: builder.mutation({
+      query: (userId, eventId) => ({
+        url: `/rsvp/${userId}/${eventId}`,
+        method: "POST",
+      })
     })
   })
 });
 
 
-export const { useGetCityQuery, useAddRsvpMutation } = cityApi;
+export const { useGetCityQuery } = cityApi;
+export const { useAddRsvpMutation } = rsvpApi;
 

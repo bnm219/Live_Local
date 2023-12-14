@@ -7,13 +7,13 @@ import { useAddRsvpMutation } from '../store/eventsPerCitiesSlice'
 
 
 function Event({eventsName, eventsDescription}) {
-  let { city, userId, eventId } = useParams();
+  let { userId, eventId } = useParams();
 
   // use the hooks to create the mutation functions we'll use
   const [addRsvp] = useAddRsvpMutation();  
 
   const rsvp = async() => {
-    await addRsvp(city, userId, eventId)  //can I pass in the variables that I need using useParams?
+    await addRsvp(userId, eventId)  //can I pass in the variables that I need using useParams?
   }
 
   return (
