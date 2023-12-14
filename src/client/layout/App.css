@@ -46,7 +46,21 @@ section {
     padding: 10px;
   }
 
+.events-grid-container {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
   .grid-container > div {
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #fff;
+    text-align: center;
+    font-size: 30px;
+  }
+  .events-grid-container > div {
     color: #fff;
     background-color: #000;
     border: 1px solid #fff;
@@ -79,9 +93,10 @@ a, a:hover {
   padding: 20px;
 }
 
-.addRSVP{
+.addRSVP, .deleteRsvp{
   color:#000;
   background-color: #fff;
-  margin-left: 57%;
+  float:right;
   padding: 2px;
+  display: block;
 }

@@ -10,6 +10,7 @@ import AuthForm from "./features/auth/AuthForm";
 import App from "./layout/App.jsx";
 import Root from "./layout/Root.jsx";
 import EventsPerCity from "./layout/EventsPerCity.jsx";
+import ProfilePage from "./layout/profilePage.jsx";
 import NotFound from "./layout/notfound.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <App /> },
       { path: "/city/:city", element: <EventsPerCity />},
+      { path: "/profile", element: <ProfilePage/>},
       { path: "/login", element: <AuthForm /> },
       { path: "*", element: <NotFound /> },
     ],

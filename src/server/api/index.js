@@ -7,8 +7,6 @@ module.exports = router;
 
 // Attaches user to res.locals if token is valid
 router.use(async (req, res, next) => {
-  // Check for token
-  console.log("Checking for token!!!!!!:::", req.headers.authorization)
   const authHeader = req.headers.authorization;
   const token = authHeader?.split(" ")[1]; // "Bearer <token>"
   if (!authHeader || !token) {
@@ -30,3 +28,4 @@ router.use(async (req, res, next) => {
 router.use("/auth", require("./auth"));
 router.use("/cities", require("./cities"));
 router.use("/events", require("./eventsPerCities"));
+router.use("/profile", require("./usersEvents"));
