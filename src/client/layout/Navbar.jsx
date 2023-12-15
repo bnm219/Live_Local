@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import { logout, selectToken } from "../features/auth/authSlice";
 
 import "./Navbar.less";
@@ -21,15 +21,20 @@ export default function Navbar() {
 
   return (
     <nav className="top">
-      <h1>Task Tracker</h1>
+      <h1>Live! Local</h1>
       <menu>
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
         {token ? (
+          <>
+          <li>
+          <NavLink to="/profile">Profile</NavLink>
+          </li>
           <li>
             <a onClick={handleLogout}>Log Out</a>
           </li>
+          </>
         ) : (
           <li>
             <NavLink to="/login">Log In</NavLink>

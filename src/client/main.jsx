@@ -7,8 +7,11 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import AuthForm from "./features/auth/AuthForm";
-import Tasks from "./features/tasks/Tasks";
+import App from "./layout/App.jsx";
 import Root from "./layout/Root.jsx";
+import EventsPerCity from "./layout/EventsPerCity.jsx";
+import ProfilePage from "./layout/profilePage.jsx";
+import NotFound from "./layout/notfound.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
@@ -16,9 +19,11 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     children: [
-      { path: "/", element: <Tasks /> },
-      { path: "/tasks", element: <Tasks /> },
+      { path: "/", element: <App /> },
+      { path: "/city/:city", element: <EventsPerCity />},
+      { path: "/profile", element: <ProfilePage/>},
       { path: "/login", element: <AuthForm /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
