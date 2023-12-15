@@ -21,6 +21,26 @@ export default function EventsPerCity() {
     if (isError){
       return (<p>Error . . .</p>)
     }
+    function upperCaseName(names){
+      let words = names.split(" ");
+      let wordsArr = [];
+      wordsArr = words.map(w =>{
+        const firstLetter= w.charAt(0).toUpperCase();
+        const rest = w.slice(1).toLowerCase();
+        return firstLetter + rest;
+      });
+      return wordsArr.join(" ");
+    }
+    function upperCaseDescription(descriptions){
+      let words = descriptions.split(".");
+      let wordsArr = [];
+      wordsArr = words.map(w =>{
+        const firstLetter= w.charAt(0).toUpperCase();
+        const rest = w.slice(1).toLowerCase();
+        return firstLetter + rest;
+      });
+      return wordsArr.join(" ");
+    }
 
     return (
         <div>
@@ -28,7 +48,7 @@ export default function EventsPerCity() {
             <img src={citySkyline} alt="City Skyline"></img>
             <h2>Events in {city}</h2>
           </section>
-            {data?.map((e,i) => <Events eventId={e.id} eventsName={e.name} eventsDescription={e.description} key={`${e}-${i}`} refresh={refresh}/>)}                      
+            {data?.map((e,i) => <Events eventId={e.id} eventsName={upperCaseName(e.name)} eventsDescription={upperCaseDescription(e.description)} key={`${e}-${i}`} refresh={refresh}/>)}                      
         </div>
     )
 }

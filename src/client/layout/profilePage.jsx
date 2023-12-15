@@ -18,7 +18,28 @@ function ProfilePage() {
     if (isError){
         return (<p>Error . . .</p>)
     }
-    //TODO add a method that checks for data and returns a string if the array is empty
+    
+    function upperCaseName(names){
+        let words = names.split(" ");
+        let wordsArr = [];
+        wordsArr = words.map(w =>{
+          const firstLetter= w.charAt(0).toUpperCase();
+          const rest = w.slice(1).toLowerCase();
+          return firstLetter + rest;
+        });
+        return wordsArr.join(" ");
+      }
+      function upperCaseDescription(descriptions){
+        let words = descriptions.split(".");
+        let wordsArr = [];
+        wordsArr = words.map(w =>{
+          const firstLetter= w.charAt(0).toUpperCase();
+          const rest = w.slice(1).toLowerCase();
+          return firstLetter + rest;
+        });
+        return wordsArr.join(" ");
+      }
+
 if(data.length > 0){
     return (
         <main>
@@ -28,7 +49,7 @@ if(data.length > 0){
             <section>
             <div className="events-grid-container">
             {data?.map((e,i) => (
-                <UserEvents eventId={e.id} eventsName={e.name} eventsDescription={e.description} key={`${e}-${i}`} refresh={refresh}/>
+                <UserEvents eventId={e.id} eventsName={upperCaseName(e.name)} eventsDescription={upperCaseDescription(e.description)} key={`${e}-${i}`} refresh={refresh}/>
                 ))}
             </div>
             </section>
