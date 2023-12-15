@@ -103,3 +103,7 @@ a, a:hover {
   padding: 2px;
   display: block;
 }
+
+.registerLogin {
+  color: #000;
+}
