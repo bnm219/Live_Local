@@ -3,7 +3,7 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 export const cityApi = createApi({
     reducerPath: 'city',
     baseQuery: fetchBaseQuery({
-      baseUrl: 'http://localhost:3000/api',
+      baseUrl: '/api',
       prepareHeaders: (headers, { getState }) => {
         const token = getState().auth.token;
         if (token) {
@@ -23,7 +23,7 @@ export const cityApi = createApi({
 export const rsvpApi = createApi({
   reducerPath:'rsvp',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3000/api/events',
+    baseUrl: '/api/events',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {

@@ -3,7 +3,7 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 export const profileApi = createApi({
     reducerPath: 'profile',
     baseQuery: fetchBaseQuery({
-      baseUrl: 'http://localhost:3000/api',
+      baseUrl: '/api',
       prepareHeaders: (headers, { getState }) => {
         const token = getState().auth.token;
         if (token) {
@@ -22,7 +22,7 @@ export const profileApi = createApi({
 export const cancelRsvpApi = createApi({
   reducerPath:'cancelRsvp',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3000/api/profile',
+    baseUrl: '/api/profile',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {
