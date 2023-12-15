@@ -4,7 +4,7 @@ import { selectToken } from "../features/auth/authSlice";
 import './App.css';
 import { useAddRsvpMutation } from '../store/eventsPerCitiesSlice';
 
-function Event({eventId, eventsName, eventsDescription}) {
+function Event({eventId, eventsName, eventsDescription, refresh}) {
   // use the hooks to create the mutation functions we'll use
   const [addRsvp] = useAddRsvpMutation();  
 
@@ -13,6 +13,7 @@ function Event({eventId, eventsName, eventsDescription}) {
   const rsvp = async() => {
     if(token){
     await addRsvp(eventId);
+    refresh();
     alert(`You have added ${eventsName} to your  profile.`);
     } else {
       alert('Please log in to add this event to your profile.')

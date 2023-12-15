@@ -60,7 +60,7 @@ section {
     text-align: center;
     font-size: 30px;
   }
-  .events-grid-container > div {
+  .grid-container > div {
     color: #fff;
     background-color: #000;
     border: 1px solid #fff;
@@ -82,6 +82,9 @@ a, a:hover {
 }
 .eventName{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   color: #fff;
   background-color: #000;
   padding: 10px;

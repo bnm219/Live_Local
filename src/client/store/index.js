@@ -3,7 +3,7 @@ import authReducer from "../features/auth/authSlice";
 import { citiesApi } from './citiesSlice'
 import api from "./api";
 import { cityApi, rsvpApi } from "./eventsPerCitiesSlice";
-import { profileApi } from "./userEventsSlice";
+import { cancelRsvpApi, profileApi } from "./userEventsSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,10 +12,11 @@ const store = configureStore({
     cities: citiesApi.reducer,
     city : cityApi.reducer,
     rsvp: rsvpApi.reducer,
+    cancelRsvp: cancelRsvpApi.reducer,
     profile: profileApi.reducer
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(api.middleware).concat(citiesApi.middleware).concat(cityApi.middleware).concat(rsvpApi.middleware).concat(profileApi.middleware),
+    getDefaultMiddleware().concat(api.middleware).concat(citiesApi.middleware).concat(cityApi.middleware).concat(rsvpApi.middleware).concat(profileApi.middleware).concat(cancelRsvpApi.middleware),
 });
 
 export default store;

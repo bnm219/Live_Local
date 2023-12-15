@@ -25,7 +25,7 @@ function MainSection() {
       <section>
       <div className="grid-container">
         {data.map((e,i) => (
-          <div><Link to = {`/city/${e.city}`} key={`${e}-${i}`}>{e.city} </Link></div>
+          <div key={`${e}-${i}`}><Link to = {`/city/${e.city}`} >{e.city} </Link></div>
           ))}
       </div>
       </section>

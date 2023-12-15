@@ -19,8 +19,8 @@ export const profileApi = createApi({
     }),
 });
 
-export const deleteRsvpApi = createApi({
-  reducerPath:'rsvp',
+export const cancelRsvpApi = createApi({
+  reducerPath:'cancelRsvp',
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://localhost:3000/api/profile',
     prepareHeaders: (headers, { getState }) => {
@@ -33,10 +33,10 @@ export const deleteRsvpApi = createApi({
   }),
 
   endpoints: (builder) => ({
-    deleteRsvp: builder.mutation({
+    cancelRsvp: builder.mutation({
       query: (eventId) => ({
         url: `/${eventId}`,
-        method: "DELETE",
+        method: "PUT",
       })
     })
   })
@@ -44,4 +44,4 @@ export const deleteRsvpApi = createApi({
 
 
 export const { useGetProfileQuery } = profileApi;
-export const { useDeleteRsvpMutation } = deleteRsvpApi;
+export const { useCancelRsvpMutation } = cancelRsvpApi;
